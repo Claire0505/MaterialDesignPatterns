@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MaterialDesign</string>
+    <string name="drawer_item">drawer_item</string>
+    <string name="nav_item1">Navigation Items 1</string>
+    <string name="nav_item2">Navigation Items 2</string>
+    <string name="nav_item3">Navigation Items 3</string>
+    <string name="action_settings">Setting</string>
+    <string name="open_drawer">openDrawer</string>
+    <string name="close_drawer">closeDrawer</string>
+</resources>

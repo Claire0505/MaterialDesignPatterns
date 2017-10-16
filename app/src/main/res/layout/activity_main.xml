@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context="com.admin.claire.materialdesignpatterns.MainActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"/>
+
+        <LinearLayout
+            android:id="@+id/anchorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textDrawerItemName"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/drawer_item"
+            app:layout_anchor="@+id/toolbar"
+            app:layout_anchorGravity="bottom|center_horizontal"/>
+
+        </LinearLayout>
+
+        <!--elevation 陰影高度
+        pressedTranslationZ按下的時候陰影就會增大-->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:elevation="6dp"
+            app:pressedTranslationZ="12dp"
+            android:clickable="true"
+            app:backgroundTint="@color/purpleColorPrimary"
+            app:rippleColor="@color/colorAccent"
+            app:fabSize="normal"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:layout_anchor="@id/anchorView"
+            app:layout_anchorGravity="bottom|right"/>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu"/>
+</android.support.v4.widget.DrawerLayout>
