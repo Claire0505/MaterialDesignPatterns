@@ -1,5 +1,6 @@
 package com.admin.claire.materialdesignpatterns;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initDrawerLayout() {
+        //在Toolbar上加上「三」圖示
         drawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,
                 R.string.open_drawer,R.string.close_drawer){
             @Override
@@ -106,10 +108,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void navigateTo(MenuItem menuItem) {
-        textDrawerItemName.setText(menuItem.getTitle());
-        //這裡會用 navItemId 記著當前的 menuItem。
-        navItemId = menuItem.getItemId();
-        menuItem.setCheckable(true);
+        switch (menuItem.getItemId()){
+            case R.id.nav_recycler:
+                startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+                break;
+            default:
+                textDrawerItemName.setText(menuItem.getTitle());
+                //這裡會用 navItemId 記著當前的 menuItem。
+                navItemId = menuItem.getItemId();
+                menuItem.setCheckable(true);
+        }
 
     }
 
