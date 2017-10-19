@@ -106,11 +106,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     private void navigateTo(MenuItem menuItem) {
         switch (menuItem.getItemId()){
+            case R.id.navigation_item_1:
+                Snackbar.make(textDrawerItemName,menuItem.getTitle(),Snackbar.LENGTH_SHORT).show();
+                break;
             case R.id.nav_recycler:
                 startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+                break;
+            case R.id.nav_tabs:
+                startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
                 break;
             default:
                 textDrawerItemName.setText(menuItem.getTitle());

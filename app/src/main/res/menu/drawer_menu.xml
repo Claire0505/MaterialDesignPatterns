@@ -14,10 +14,10 @@
             android:title="@string/nav_recycler" />
 
         <item
-            android:id="@+id/navigation_item_3"
+            android:id="@+id/nav_tabs"
             android:checked="true"
             android:icon="@android:drawable/star_on"
-            android:title="@string/nav_item3" />
+            android:title="@string/nav_tabs" />
 
     </group>
 
